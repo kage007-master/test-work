@@ -12,7 +12,7 @@ export default function AnimationImage({
   src,
   alt,
 }: {
-  src: StaticImageData;
+  src: string;
   alt: string;
 }) {
   const imageRef = useRef<HTMLImageElement | null>(null);
@@ -40,5 +40,14 @@ export default function AnimationImage({
     }
   }, []);
 
-  return <Image src={src} alt={alt} ref={imageRef} className="opacity-0" />;
+  return (
+    <Image
+      src={src}
+      alt={alt}
+      ref={imageRef}
+      className="w-full opacity-0"
+      width={500}
+      height={40}
+    />
+  );
 }
